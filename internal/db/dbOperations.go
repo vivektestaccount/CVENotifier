@@ -100,9 +100,16 @@ func InsertData(dbConn *sql.DB, vulnTitle string, link string, published string,
 
 func notifySlack(vulnTitle string, link string, published string, categories string, slackWebhook string) {
 	message := SlackMessage{
-		Text: "Title: " + vulnTitle + "\nLink: " + link + "\nDate Published: " + published + "\n" + strings.ReplaceAll(categories,
-			",", "\n"),
+		Text: ":rotating_light: " + vulnTitle + "\n" +
+			":date: Published:  " + published + "\n" +
+			":information_source: Ref: " + link + "\n" +
+			strings.ReplaceAll(categories, ",", "\n"),
 	}
+
+	// Send the message to Slack using the webhook URL
+	// (Make sure to implement the code to send the message using the slackWebhook URL)
+}
+
 
 	// Encode message payload as JSON
 	payload, err := json.Marshal(message)
