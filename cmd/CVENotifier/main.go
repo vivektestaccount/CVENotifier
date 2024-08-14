@@ -59,8 +59,8 @@ func main() {
 				matchFound++
 
 				log.Printf("Matched Keyword: " + keyword)
-				log.Printf("Title: " + item.Title)
-				log.Printf("Link: " + item.Link)
+				log.Printf(":rotating_light:: " + item.Title)
+				log.Printf("Ref: " + item.Link)
 				log.Printf("Published Date: " + item.Published)
 				log.Printf("Categories: " + strings.Join(item.Categories, ","))
 
